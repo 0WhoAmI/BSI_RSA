@@ -18,7 +18,7 @@ class RSA
         BigInteger q = GenerateLargePrime(BitLength / 2);
         BigInteger n = p * q;
         BigInteger phi = (p - 1) * (q - 1);
-        BigInteger e = GenerateE(phi); // losowe e, gdzie: 1 < e < φ(n), GCD(e, φ(n)) = 1
+        BigInteger e = GenerateE(phi); // losowe e, gdzie: 1 < e < φ(n), NWD(e, φ(n)) = 1
         BigInteger d = ModInverse(e, phi); // d = e⁻¹ mod φ(n)
 
         Console.WriteLine($"Publiczny klucz (e, n): ({e}, {n})");
